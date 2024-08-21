@@ -475,17 +475,15 @@ Retorno
 */
 void destruirListaEncadeadaComCabecote(No **inicio)
 {
-    No * i, * j, * aux;
+    No * j, * aux;
 
-    j = (*inicio)->prox;
-    while(j != NULL && j->prox != NULL){
+    j = *inicio;
+    *inicio = NULL;
+    while(j != NULL){
         aux = j;
         j = j->prox;
         free(aux);
     }
-    if(j != NULL)
-        free(j);
-    *inicio = NULL;
     return;
 }
 
