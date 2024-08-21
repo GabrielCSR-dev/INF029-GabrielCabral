@@ -1,5 +1,3 @@
-// gcc EstruturaVetores.c mainTeste.c -o teste
-// ./teste
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -110,55 +108,32 @@ void testeListar()
 {
     show_log("testeListar()");
     //###  int getDadosEstruturaAuxiliar(int posicao, int vetorAux[]); ###
-    // printf("batata\n");
     printf("%d\n", inserirNumeroEmEstrutura(2, 7) == SUCESSO);
     printf("%d\n", inserirNumeroEmEstrutura(2, -9) == SUCESSO);
-    // printf("%d\n", criarEstruturaAuxiliar(10, 3) == SUCESSO);
-    // printf("%d\n", inserirNumeroEmEstrutura(10, 7) == SUCESSO);
-    // printf("%d\n", inserirNumeroEmEstrutura(10, -9) == SUCESSO);
-    // printf("%d\n", inserirNumeroEmEstrutura(10, 0) == SUCESSO);
-    // printf("%d\n", inserirNumeroEmEstrutura(10, 4) == SEM_ESPACO);
 
     int vet[2];
-    // int vet[3];
 
     printf("%d\n", getDadosEstruturaAuxiliar(1, vet) == SEM_ESTRUTURA_AUXILIAR);
     printf("%d\n", getDadosEstruturaAuxiliar(11, vet) == POSICAO_INVALIDA);
     printf("%d\n", getDadosEstruturaAuxiliar(2, vet) == SUCESSO);
-    // printf("%d\n", getDadosEstruturaAuxiliar(10, vet) == SUCESSO);
 
     printf("%d\n", vet[0] == 7);
     printf("%d\n", vet[1] == -9);
-    // printf("%d\n", vet[0] == 7);
-    // printf("%d\n", vet[1] == -9);
-    // printf("%d\n", vet[2] == 0);
 
     printf("%d\n", getDadosOrdenadosEstruturaAuxiliar(1, vet) == SEM_ESTRUTURA_AUXILIAR);
     printf("%d\n", getDadosOrdenadosEstruturaAuxiliar(11, vet) == POSICAO_INVALIDA);
     printf("%d\n", getDadosOrdenadosEstruturaAuxiliar(2, vet) == SUCESSO);
-    // printf("%d\n", getDadosOrdenadosEstruturaAuxiliar(10, vet) == SUCESSO);
 
     printf("%d\n", vet[0] == -9);
     printf("%d\n", vet[1] == 7);
-    // printf("%d\n", vet[0] == -9);
-    // printf("%d\n", vet[1] == 0);
-    // printf("%d\n", vet[2] == 7);
 
     printf("%d\n", getDadosEstruturaAuxiliar(2, vet) == SUCESSO);
-    // printf("%d\n", getDadosEstruturaAuxiliar(10, vet) == SUCESSO);
 
     printf("%d\n", vet[0] == 7);
     printf("%d\n", vet[1] == -9);
-    // printf("%d\n", vet[0] == 7);
-    // printf("%d\n", vet[1] == -9);
-    // printf("%d\n", vet[2] == 0);
 
     printf("%d\n", excluirNumeroDoFinaldaEstrutura(2) == SUCESSO);
     printf("%d\n", excluirNumeroDoFinaldaEstrutura(2) == SUCESSO);
-    // printf("%d\n", excluirNumeroDoFinaldaEstrutura(10) == SUCESSO);
-    // printf("%d\n", excluirNumeroDoFinaldaEstrutura(10) == SUCESSO);
-    // printf("%d\n", excluirNumeroDoFinaldaEstrutura(10) == SUCESSO);
-    // printf("%d\n", excluirNumeroDoFinaldaEstrutura(10) == ESTRUTURA_AUXILIAR_VAZIA);
 }
 
 /*
@@ -209,6 +184,7 @@ void testeRetornarTodosNumeros()
     int vet2[9];
 
     printf("%d\n", getDadosOrdenadosDeTodasEstruturasAuxiliares(vet2) == SUCESSO);
+
     printf("%d\n", vet2[0] == -6);
     printf("%d\n", vet2[1] == 0);
     printf("%d\n", vet2[2] == 1);
