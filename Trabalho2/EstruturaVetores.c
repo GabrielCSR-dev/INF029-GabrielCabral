@@ -369,7 +369,7 @@ int modificarTamanhoEstruturaAuxiliar(int posicao, int novoTamanho)
     retorno = validacao_estrutura(posicao);
     if((retorno != POSICAO_INVALIDA) && (retorno != SEM_ESTRUTURA_AUXILIAR)){
         if(vp[posicao].tamanho + novoTamanho >= 1){
-            novo_pont = realloc(vp[posicao].aux, vp[posicao].tamanho + novoTamanho);
+            novo_pont = realloc(vp[posicao].aux, (vp[posicao].tamanho + novoTamanho)*sizeof(int));
             if(novo_pont != NULL){
                 vp[posicao].aux = novo_pont;
                 vp[posicao].tamanho = vp[posicao].tamanho + novoTamanho; 
@@ -478,12 +478,13 @@ void destruirListaEncadeadaComCabecote(No **inicio)
     No * i, * j, * aux;
 
     j = (*inicio)->prox;
-    while(j->prox != NULL){
+    while(j != NULL && j->prox != NULL){
         aux = j;
         j = j->prox;
         free(aux);
     }
-    free(j);
+    if(j != NULL)
+        free(j);
     *inicio = NULL;
     return;
 }
